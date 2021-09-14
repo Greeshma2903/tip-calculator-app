@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <main>
+    <h1>spli<br>tter</h1>
+    <section class="container">
+      
+      <!-- left section -->
+      <article class="input-container">
+        <form class=" amount-input">
+          <label for="bill-amount">Bill</label>
+          <input class="input-field" type="number" name="amount" id="bill-amount" placeholder="0" aria-label="bill-amount">
+        </form>
+        <!-- tip percent buttons -->
+        <form class="select-tip">
+          <label>Select Tip %</label>
+          <div class="percent-options">
+            <button type="button" class="btn_5" aria-label="add-5-percentage" >5%</button>
+            <button type="button" class="btn_10" aria-label="add-10-percentage">10%</button>
+            <button type="button" class="btn_15" aria-label="add-15-percentage">15%</button>
+            <button type="button" class="btn_25" aria-label="add-25-percentage">25%</button>
+            <button type="button" class="btn_50" aria-label="add-50-percentage">50%</button>
+            <input class="custom-percentage" type="text" placeholder="Custom" aria-label="enter-custom-input">
+          </div>
+        </form>
+
+        <form class="num-people">
+          <label for="people-count">Number of People <span>Can't be zero</span></label>
+          <input class="input-field" type="number" name="number-people" id="people-count" placeholder="0" aria-label="enter-number-of-people" required aria-required="">
+        </form>
+      </article>
+
+      <!-- right section -->
+      <article class="display-container">
+
+        <div class="display-tip">
+          <div>
+            <h3>Tip Amount</h3>
+            <p>/ person</p>
+          </div>
+          <p class="amount show-tip" aria-label="total-tip-displayed"> 0.00</p>
+        </div>
+
+        <div class="display-total">
+          <div>
+            <h3>Total</h3>
+            <p>/ person</p>
+          </div>
+          <p class="amount show-total" aria-label="total-amount-displayed"> 0.00</p>
+        </div>
+        <button class="reset-btn" role="button" aria-label="reset-button" disabled aria-disabled="">reset</button>
+      </article>
+
+    </section>
+  </main>
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Greeshma2903">Greeshma</a>.
+  </footer>
+
+  <script src="./index.js"></script>
+</body>
+</html>
+
+<!--  
+  Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset
+-->
+  

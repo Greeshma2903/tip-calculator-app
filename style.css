@@ -1,0 +1,307 @@
+/* ========================== fonts ======================= */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+
+/* ====================== global variables ================ */
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan-2: hsl(186, 14%, 43%);
+  --Dark-grayish-cyan-1: hsl(184, 14%, 56%);
+  --Light-grayish-cyan-2: hsl(185, 41%, 84%);
+  --Light-grayish-cyan-1: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+  --red: rgb(255, 102, 102);
+}
+
+/* ========================= styles ====================== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--Light-grayish-cyan-2);
+  font-family: "Space Mono", "Courier New", monospace;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  min-height: 100vh;
+  max-width: 1600px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.3rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--Dark-grayish-cyan-2);
+  letter-spacing: 5px;
+  margin-bottom: 3rem;
+}
+
+/* ----------------- card section ---------------------- */
+
+section.container {
+  background-color: var(--White);
+  border-radius: 5% 5% 0 0;
+  padding: 1.5rem;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s linear;
+}
+/* --------- left section ----------- */
+
+form {
+  position: relative;
+  margin-top: 1.1rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--Dark-grayish-cyan-2);
+  position: relative;
+  display: block;
+}
+
+label span {
+  display: none;
+}
+
+/* enable when value 0 */
+label span.empty {
+  display: inline;
+  color: var(--red);
+  position: absolute;
+  right: 0;
+}
+
+.num-people #people-count.empty {
+  border: 3px solid rgb(255, 102, 102, 0.5  );
+}
+
+/* outline of input fields */
+form input:focus {
+  border: 3px solid hsla(172, 67%, 45%, 0.445);
+  border-radius: 5px;
+  outline: none;
+}
+
+form .input-field {
+  color: var(--Very-dark-cyan);
+  background-color: var(--Light-grayish-cyan-1);
+  text-align: right;
+  border-radius: 5px;
+  border: none;
+
+  font-family: "Space Mono", "Courier New", monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  padding: 5px;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* icons */
+.amount-input::before,
+.num-people::before {
+  position: absolute;
+  top: 38px;
+  left: 13px;
+  font-size: 1.1rem;
+  color: var(--Dark-grayish-cyan-1);
+  opacity: 0.5;
+}
+
+form.amount-input::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f155";
+  font-weight: 700;
+}
+
+form.num-people::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f406";
+  font-weight: 700;
+}
+
+/*---------- select tip ----------- */
+.percent-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.percent-options > button,
+.custom-percentage {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: "Space Mono", "Courier New", monospace;
+  font-weight: bold;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.percent-options > button {
+  color: var(--Light-grayish-cyan-1);
+  background-color: var(--Very-dark-cyan);
+  letter-spacing: 1.2px;
+}
+
+.percent-options > button:hover {
+  background-color: var(--Light-grayish-cyan-2);
+  color: var(--Very-dark-cyan);
+}
+
+/* enable on click */
+.percent-options > button.click {
+  background-color: var(--Strong-cyan);
+}
+
+.custom-percentage {
+  width: 100%;
+  text-align: center;
+  background-color: var(--Light-grayish-cyan-1);
+  color: var(--Dark-grayish-cyan-2);
+}
+
+/* enable on click */
+.custom-percentage.click {
+  box-shadow: none;
+}
+
+/* ----------- right section ------------- */
+article.display-container {
+  background-color: var(--Very-dark-cyan);
+  border-radius: 10px;
+  margin-top: 5%;
+  padding: 1.1rem;
+}
+
+h3 {
+  color: var(--Light-grayish-cyan-1);
+  font-size: 1rem;
+}
+
+.display-container > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0px;
+}
+
+p:not(.amount) {
+  color: var(--Dark-grayish-cyan-1);
+}
+
+p.amount {
+  color: var(--Strong-cyan);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+p.amount::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f155";
+  font-weight: 700;
+}
+
+/* reset button */
+button.reset-btn {
+  max-width: 100%;
+  width: 100%;
+  padding: 5px;
+  font-family: "Space Mono", "Courier New", monospace;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+
+  border-radius: 5px;
+  border: none;
+  background-color: var(--Strong-cyan);
+}
+
+/* ------------------- footer ------------------- */
+footer {
+  display: none;
+}
+
+/* ====================== media queries ======================= */
+@media screen and (min-width: 768px) {
+  body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  section.container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 20px;
+    padding: 2rem;
+    height: 450px;
+  }
+
+  .container > article {
+    flex-basis: 47%;
+    margin: 0;
+  }
+
+  /* ----select tip---- */
+  .percent-options > button---,
+  .custom-percentage {
+    box-shadow: 0px 6px var(--Light-grayish-cyan-2);
+  }
+
+  /* enable on click */
+  .percent-options > button.click {
+    background-color: var(--Strong-cyan);
+    box-shadow: 0px 3px var(--Dark-grayish-cyan-2);
+    transform: translateY(4px);
+  }
+
+  /* ---reset button--- */
+  button.reset-btn {
+    margin-top: 10rem;
+    box-shadow: 0px 6px var(--Light-grayish-cyan-2);
+  }
+
+  .reset-btn:active {
+    box-shadow: 0px 3px var(--Dark-grayish-cyan-2);
+    transform: translateY(4px);
+    transition: all 0.1s linear;
+  }
+
+  /* ---footer--- */
+  footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+  }
+
+  .attribution {
+    font-size: 10px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
