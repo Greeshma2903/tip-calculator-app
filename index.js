@@ -14,7 +14,21 @@ const showTip = document.querySelector(".show-tip");
 const showTotal = document.querySelector(".show-total");
 const showWarning = document.querySelector("label span");
 
-let billAmount, numPeople;
+let billAmount, numPeople, customPercent, tipTotal, tipPerson, totalPerson;
+
+// Functions
+function resetBtn() {
+  inputBill.value = "";
+  inputPeople.value = "";
+  inputPeople.classList.remove("empty");
+  inputCustom.value = "";
+  percentBtns.forEach(function (btn) {
+    btn.classList.remove("click");
+  });
+  showTip.textContent = "$0.00";
+  showTotal.textContent = "$0.00";
+  showWarning.classList.remove("empty");
+}
 
 // Activate Reset button ---->
 inputBill.addEventListener("change", function () {
@@ -37,7 +51,7 @@ inputPeople.addEventListener("change", function () {
   if (numPeople !== 0) {
     showWarning.classList.remove("empty");
     inputPeople.classList.remove("empty");
-  } else if (numPeople === 0 ) {
+  } else if (numPeople === 0) {
     showWarning.classList.add("empty");
     inputPeople.classList.add("empty");
   }
@@ -45,40 +59,42 @@ inputPeople.addEventListener("change", function () {
 
 // Select tip ---->
 const percentBtns = [btn_5, btn_10, btn_15, btn_25, btn_50, inputCustom];
+let percent = 0;
 
 percentBtns.forEach(function (btn) {
   btn.addEventListener("pointerdown", function (e) {
-      e.preventDefault();
-    btn.classList.toggle("click");
+    btn.classList.add("click");
     percentBtns.forEach(function (btnInner) {
       if (btnInner !== btn) btnInner.classList.remove("click");
     });
+    if (btn.id !== "custom") percent = Number(btn.innerHTML);
   });
 });
 
 // Reset form --->
-btnReset.addEventListener("click", function(){
-    inputBill.value = '';
-    inputPeople.value = '';
-    inputPeople.classList.remove("empty");
-    percentBtns.forEach(function(btn){
-        btn.classList.remove("click");
-    });
-    showTip.textContent = " 0.00";
-    showTotal.textContent =  " 0.00";
-    showWarning.classList.remove("empty");
-    btnReset.setAttribute("disabled", "");
-});
+btnReset.addEventListener("click", resetBtn);
 
 // Calculate tip and total ---->
-billAmount = Number(inputBill.value);
-numPeople = Number(inputPeople.value);
-let customPercent = Number(inputCustom.value);
+document.querySelectorAll("input").forEach(function (input) {
+  input.addEventListener("change", function () {
+    billAmount = Number(inputBill.value);
+    numPeople = Number(inputPeople.value);
+    customPercent = Number(inputCustom.value);
 
-const billPerPerson = billAmount/numPeople;
-const amountTipPerson = billPerPerson * customPercent/100;
+    if (customPercent > 100) {
+      alert("percentage cannot be greater than 100!")
+      resetBtn();
+    }
 
-console.log(billPerPerson);
-console.log(amountTipPerson);
+    if (percent === 0) percent = customPercent;
 
+    if (billAmount !== 0 && numPeople !== 0 && percent !== 0) {
+      tipTotal = billAmount * (percent / 100);
+      tipPerson = tipTotal / numPeople;
+      totalPerson = (billAmount + tipTotal) / numPeople;
 
+      showTip.textContent = "$" + tipPerson.toFixed(2);
+      showTotal.textContent = "$" + totalPerson.toFixed(2);
+    }
+  });
+});

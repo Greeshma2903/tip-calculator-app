@@ -11,7 +11,6 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -29,8 +28,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![SS-large-screen](./SS-large-screen.png)
 
+<div>
+
+  <img src="SS-small-screen.png" align="center"  height="500px"/>
+
+</div>
 
 ### Links
 
@@ -39,6 +43,11 @@ Users should be able to:
 
 ## My process
 
+This was a really interesting Challenge especially because of the JS part. Just like other challenges, i chose mobile first approach 📱. 
+
+For the first time I faced some HTML challenges (choosing between form fields or just regular para/heading) but bigger than that was the JS part. The challenge for me was how to read values from the fields after user inputs the proper value (and not NaN). But I figured it out by using the "change" event listener on all input fields.🤔
+
+I also tried to make the page more accessible (🤞)
 ### Built with
 
 - Semantic HTML5 markup
@@ -50,43 +59,26 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Learnt about more [Event listeners](https://developer.mozilla.org/en-US/docs/Web/Events) & [Pesudo Classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) (shoutout to MDN Docs for providing such great documentation 🤩)
+- ✅ Learnt to declare all functions at top of Script
 
-To see how you can add code snippets, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<!-- I liked the forms in this one -->
+<input class="input-field" type="number" name="number-people" id="people-count" placeholder="0" aria-label="enter-number-of-people" required aria-required="The number of people cannot be 0" min="0" max="100" />
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
+- [MDN: Event Listeners](https://developer.mozilla.org/en-US/docs/Web/Events)
+- [MDN: Pseudo classes](https://developer.mozilla.org/en-US/docs/Web/Events)
+- [How to add Font Awesome Icons using CSS pseudo elements](https://fontawesome.com/v5.15/how-to-use/on-the-web/advanced/css-pseudo-elements)
 ## Author
 
 - Website - [Greeshma](https://greeshma-portfolio.netlify.app/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@Greeshma2903](https://www.frontendmentor.io/profile/Greeshma2903)
 - Twitter - [@GreeshmaMedam](https://www.twitter.com/GreeshmaMedam)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I referred to [ellienndea's](https://github.com/ellienndea/tip-calculator-app) solution to understand her approach on making buttons clickable (like checkboxes) and how the calculator needs to function. Her approach is really good one, and she also essentially used form inputs, which inspired me to do the same (as I thought it would be more accessible too 😊)

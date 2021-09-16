@@ -34,13 +34,9 @@ body {
   width: 100%;
 }
 
-h1 {
-  font-size: 1.3rem;
-  text-align: center;
-  text-transform: uppercase;
-  color: var(--Dark-grayish-cyan-2);
-  letter-spacing: 5px;
-  margin-bottom: 3rem;
+#logo {
+  display: block;
+  margin: 3rem auto;
 }
 
 /* ----------------- card section ---------------------- */
@@ -59,7 +55,7 @@ section.container {
 
 form {
   position: relative;
-  margin-top: 1.1rem;
+  margin-top: 1.4rem;
 }
 
 label {
@@ -83,7 +79,7 @@ label span.empty {
 }
 
 .num-people #people-count.empty {
-  border: 3px solid rgb(255, 102, 102, 0.5  );
+  border: 3px solid rgb(255, 102, 102, 0.5);
 }
 
 /* outline of input fields */
@@ -161,6 +157,10 @@ form.num-people::before {
   letter-spacing: 1.2px;
 }
 
+.percent-options > button::after {
+  content: "%";
+}
+
 .percent-options > button:hover {
   background-color: var(--Light-grayish-cyan-2);
   color: var(--Very-dark-cyan);
@@ -178,11 +178,6 @@ form.num-people::before {
   color: var(--Dark-grayish-cyan-2);
 }
 
-/* enable on click */
-.custom-percentage.click {
-  box-shadow: none;
-}
-
 /* ----------- right section ------------- */
 article.display-container {
   background-color: var(--Very-dark-cyan);
@@ -191,9 +186,10 @@ article.display-container {
   padding: 1.1rem;
 }
 
-h3 {
+.display-description {
   color: var(--Light-grayish-cyan-1);
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .display-container > div {
@@ -203,7 +199,7 @@ h3 {
   margin: 1rem 0px;
 }
 
-p:not(.amount) {
+p:not(.amount, .display-description) {
   color: var(--Dark-grayish-cyan-1);
 }
 
@@ -211,13 +207,6 @@ p.amount {
   color: var(--Strong-cyan);
   font-size: 2rem;
   font-weight: bold;
-}
-
-p.amount::before {
-  display: inline-block;
-  font-family: "Font Awesome 5 Free";
-  content: "\f155";
-  font-weight: 700;
 }
 
 /* reset button */
@@ -232,7 +221,16 @@ button.reset-btn {
 
   border-radius: 5px;
   border: none;
+  background-color: var(--Dark-grayish-cyan-2);
+}
+
+button.reset-btn:enabled {
   background-color: var(--Strong-cyan);
+  cursor: pointer;
+}
+
+button.reset-btn:enabled:hover {
+  background-color: var(--Light-grayish-cyan-2);
 }
 
 /* ------------------- footer ------------------- */
@@ -248,13 +246,19 @@ footer {
     display: flex;
   }
 
+  #logo {
+    margin-top: 0px;
+  }
+
   section.container {
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    max-width: 850px;
+    width: 95%;
     border-radius: 20px;
     padding: 2rem;
-    height: 450px;
+    height: auto;
+    margin: 0 auto;
   }
 
   .container > article {
@@ -263,28 +267,24 @@ footer {
   }
 
   /* ----select tip---- */
-  .percent-options > button---,
-  .custom-percentage {
-    box-shadow: 0px 6px var(--Light-grayish-cyan-2);
-  }
-
-  /* enable on click */
-  .percent-options > button.click {
-    background-color: var(--Strong-cyan);
-    box-shadow: 0px 3px var(--Dark-grayish-cyan-2);
-    transform: translateY(4px);
+  .percent-options {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.1 rem;
   }
 
   /* ---reset button--- */
   button.reset-btn {
-    margin-top: 10rem;
-    box-shadow: 0px 6px var(--Light-grayish-cyan-2);
+    margin-top: 8rem;
+  }
+  
+  button.reset-btn:enabled {
+    box-shadow: 0px 5px var(--Light-grayish-cyan-2);
   }
 
-  .reset-btn:active {
+  button.reset-btn:active {
+    transform: translateY(3px);
+    transition: all 0.2s linear;
     box-shadow: 0px 3px var(--Dark-grayish-cyan-2);
-    transform: translateY(4px);
-    transition: all 0.1s linear;
   }
 
   /* ---footer--- */
