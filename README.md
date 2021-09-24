@@ -73,6 +73,8 @@ I also tried to make the page more accessible (🤞)
 - [MDN: Event Listeners](https://developer.mozilla.org/en-US/docs/Web/Events)
 - [MDN: Pseudo classes](https://developer.mozilla.org/en-US/docs/Web/Events)
 - [How to add Font Awesome Icons using CSS pseudo elements](https://fontawesome.com/v5.15/how-to-use/on-the-web/advanced/css-pseudo-elements)
+- [Aria labels for accessibility](https://www.aditus.io/aria/aria-label/)
+
 ## Author
 
 - Website - [Greeshma](https://greeshma-portfolio.netlify.app/)
