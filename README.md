@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: 
-- Live Site URL: 
+- Solution URL: https://github.com/Greeshma2903/tip-calculator-app/
+- Live Site URL: http://tip-calculator-app-opal.vercel.app/
 
 ## My process
 
